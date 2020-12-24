@@ -31,6 +31,13 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_PACKAGES += \
     DeviceParts
 
+# Init scripts
+PRODUCT_PACKAGES += \
+    dt2w.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/bin/init.dt2w.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init.dt2w.sh
+
 # Kernel
 NEED_KERNEL_MODULE_VENDOR_OVERLAY := true
 ifeq ($(TARGET_USES_PREBUILT_KERNEL), true)
