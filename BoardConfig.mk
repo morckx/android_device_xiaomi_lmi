@@ -21,7 +21,11 @@ SOONG_CONFIG_XIAOMI_KONA_FOD_POS_Y = 1655
 SOONG_CONFIG_XIAOMI_KONA_FOD_SIZE = 202
 
 # Kernel
+ifeq ($(TARGET_USES_PREBUILT_KERNEL), true)
+-include device/xiaomi/lmi-kernel/BoardConfigKernel.mk
+else
 TARGET_KERNEL_CONFIG := vendor/lmi_defconfig
+endif
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/dev/input/event3"

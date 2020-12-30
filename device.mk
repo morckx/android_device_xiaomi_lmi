@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+TARGET_USES_PREBUILT_KERNEL := true
+
 # Fingerprint
 TARGET_HAVE_FOD := true
 
@@ -28,6 +30,12 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Device parts
 PRODUCT_PACKAGES += \
     DeviceParts
+
+# Kernel
+NEED_KERNEL_MODULE_VENDOR_OVERLAY := true
+ifeq ($(TARGET_USES_PREBUILT_KERNEL), true)
+$(call inherit-product, device/xiaomi/lmi-kernel/kernel.mk)
+endif
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
