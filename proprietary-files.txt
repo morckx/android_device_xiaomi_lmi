@@ -1,4 +1,4 @@
-# Unpinned blobs from lmi-user 10 QKQ1.191117.002 V12.0.4.0.QJKMIXM release-keys
+# Unpinned blobs from lmi-user 11 RKQ1.200826.002 V12.2.4.0.RJKMIXM release-keys
 
 # Camera Motor
 media/audio/ui/popup_cangmen_down.ogg
